@@ -17,3 +17,22 @@ rpois_mix2 <- function(n, lambda = c(12, 25), delta = c(0.7, 0.3), seed = NULL) 
 }
 
 # Modle2 Two-State Poisson Hidden Markov Model (HMM)
+# Helper function: compute stationary distribution (if initial not provided)
+stationary_dist <- function(Gamma) {
+  # Solve δ = δ * Γ, sum(δ) = 1
+  m <- nrow(Gamma)
+  A <- t(diag(m) - t(Gamma))
+  A[m, ] <- 1
+  b <- c(rep(0, m - 1), 1)
+  as.numeric(solve(A, b))
+}
+
+# Helper function: sample a Markov chain state path
+sample_markov_chain <- function(n, Gamma, delta = NULL) {
+  m <- nrow(Gamma)
+  stopifnot(ncol(Gamma) == m)
+  # normalize rows (just in case)
+  Gamma <- sweep(Gamma, 1, rowSums(Gamma), "/")
+  if (is.null(delta)) delta <- stationary_dist(Gamma)
+  delta <- delta / sum(delta)
+
