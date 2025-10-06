@@ -1,0 +1,19 @@
+# Modle1 Independent two-Poisson mixture sampler
+# n:    number of samples to generate
+# lambda: vector of Poisson means (length 2), default c(12, 25)
+# delta:  mixing probabilities for the two components (length 2), default c(0.7, 0.3)
+# seed:  optional RNG seed for reproducibility
+rpois_mix2 <- function(n, lambda = c(12, 25), delta = c(0.7, 0.3), seed = NULL) {
+  if (!is.null(seed)) set.seed(seed)
+  stopifnot(length(lambda) == 2, length(delta) == 2)
+  stopifnot(all(lambda > 0), all(delta >= 0))
+  delta <- delta / sum(delta)  # normalize in case of slight mismatch
+  
+  # sample component labels independently with probs delta
+  z <- sample.int(2, size = n, replace = TRUE, prob = delta)
+  # generate counts from the chosen Poisson component
+  x <- rpois(n, lambda = lambda[z])
+  return(x)
+}
+
+# Modle2 Two-State Poisson Hidden Markov Model (HMM)
