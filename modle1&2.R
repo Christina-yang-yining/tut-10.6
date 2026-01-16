@@ -1,0 +1,90 @@
+# Modle1 Independent two-Poisson mixture sampler
+# n:    number of samples to generate
+# lambda: vector of Poisson means (length 2), default c(12, 25)
+# delta:  mixing probabilities for the two components (length 2), default c(0.7, 0.3)
+# seed:  optional RNG seed for reproducibility
+rpois_mix2 <- function(n, lambda = c(12, 25), delta = c(0.7, 0.3), seed = NULL) {
+  if (!is.null(seed)) set.seed(seed)
+  stopifnot(length(lambda) == 2, length(delta) == 2)
+  stopifnot(all(lambda > 0), all(delta >= 0))
+  delta <- delta / sum(delta)  # normalize in case of slight mismatch
+  
+  # sample component labels independently with probs delta
+  z <- sample.int(2, size = n, replace = TRUE, prob = delta)
+  # generate counts from the chosen Poisson component
+  x <- rpois(n, lambda = lambda[z])
+  return(x)
+}
+
+# Modle2 Two-State Poisson Hidden Markov Model (HMM)
+# Helper function: compute stationary distribution (if initial not provided)
+stationary_dist <- function(Gamma) {
+  # Solve δ = δ * Γ, sum(δ) = 1
+  m <- nrow(Gamma)
+  A <- t(diag(m) - t(Gamma))
+  A[m, ] <- 1
+  b <- c(rep(0, m - 1), 1)
+  as.numeric(solve(A, b))
+}
+
+# Helper function: sample a Markov chain state path
+sample_markov_chain <- function(n, Gamma, delta = NULL) {
+  m <- nrow(Gamma)
+  stopifnot(ncol(Gamma) == m)
+  # normalize rows (just in case)
+  Gamma <- sweep(Gamma, 1, rowSums(Gamma), "/")
+  # sweep(): normalize rows by dividing each row element by its row sum
+  if (is.null(delta)) delta <- stationary_dist(Gamma)
+  delta <- delta / sum(delta)
+  states <- integer(n)
+  # Sample initial state
+  states[1] <- sample.int(m, size = 1, prob = delta)
+  # Sample subsequent states
+  if (n >= 2) {
+    for (t in 2:n) {
+      states[t] <- sample.int(m, size = 1, prob = Gamma[states[t - 1], ])
+    }
+  }
+  stat
+  # Main function: simulate two-state Poisson HMM data
+  # Arguments:
+  #   n             - number of samples to generate
+  #   lambda        - vector of Poisson means for each state (default: c(8, 20))
+  #   Gamma         - 2x2 state transition matrix
+  #   delta         - initial state distribution (optional)
+  #   seed          - random seed (optional)
+  #   return_states - if TRUE, return hidden states as well
+  # Returns:
+  #   A numeric vector of observations (or a list with states if return_states=TRUE)
+  
+  simulate_hmm_poisson2 <- function(
+    n,
+    lambda = c(8, 20),
+    Gamma  = matrix(c(0.92, 0.08,
+                      0.10, 0.90), nrow = 2, byrow = TRUE),
+    delta  = NULL,
+    seed   = NULL,
+    return_states = FALSE
+  ) {
+    if (!is.null(seed)) set.seed(seed)
+    stopifnot(length(lambda) == 2, all(lambda > 0))
+    stopifnot(all(dim(Gamma) == c(2, 2)))
+    # Normalize transition matrix rows
+    Gamma <- sweep(Gamma, 1, rowSums(Gamma), "/")
+    if (is.null(delta)) delta <- stationary_dist(Gamma)
+    delta <- delta / sum(delta)
+    
+    # 1) Generate hidden state sequence
+    states <- sample_markov_chain(n, Gamma, delta)
+    
+    # 2) Generate Poisson observations conditional on states
+    x <- rpois(n, lambda = lambda[states])
+    
+    # Output
+    if (return_states) {
+      return(list(observations = x, states = states))
+    } else {
+      return(x)
+    }
+  }
+  
