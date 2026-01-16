@@ -1,0 +1,29 @@
+,,,,,Sensor_Package_Name,Sensor_Package_Name,Sensor_Package_Name,Sensor_Package_Name,Sensor_Package_Name
+,,,,,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664
+,,,,,Sensor_Name,Sensor_Name,Sensor_Name,Sensor_Name,Sensor_Name
+,,,,,AirBeam3-F,AirBeam3-PM1,AirBeam3-PM10,AirBeam3-PM2.5,AirBeam3-RH
+,,,,,Measurement_Type,Measurement_Type,Measurement_Type,Measurement_Type,Measurement_Type
+,,,,,Temperature,Particulate Matter,Particulate Matter,Particulate Matter,Humidity
+,,,,,Measurement_Units,Measurement_Units,Measurement_Units,Measurement_Units,Measurement_Units
+,,,,,fahrenheit,microgram per cubic meter,microgram per cubic meter,microgram per cubic meter,percent
+ObjectID,Session_Name,Timestamp,Latitude,Longitude,1:Measurement_Value,2:Measurement_Value,3:Measurement_Value,4:Measurement_Value,5:Measurement_Value
+1,aftercook-21,2025-12-21T16:14:07.000,200.0,200.0,86.0,22.0,29.0,24.0,22.0
+2,aftercook-21,2025-12-21T16:15:07.000,200.0,200.0,86.0,23.0,30.0,25.0,21.0
+3,aftercook-21,2025-12-21T16:16:07.000,200.0,200.0,87.0,23.0,31.0,25.0,21.0
+4,aftercook-21,2025-12-21T16:17:07.000,200.0,200.0,87.0,22.0,29.0,24.0,20.0
+5,aftercook-21,2025-12-21T16:18:07.000,200.0,200.0,87.0,22.0,28.0,23.0,20.0
+6,aftercook-21,2025-12-21T16:19:07.000,200.0,200.0,88.0,21.0,27.0,23.0,20.0
+7,aftercook-21,2025-12-21T16:20:07.000,200.0,200.0,88.0,20.0,24.0,21.0,20.0
+8,aftercook-21,2025-12-21T16:21:07.000,200.0,200.0,88.0,18.0,21.0,20.0,20.0
+9,aftercook-21,2025-12-21T16:22:07.000,200.0,200.0,88.0,17.0,19.0,19.0,19.0
+10,aftercook-21,2025-12-21T16:23:07.000,200.0,200.0,88.0,17.0,19.0,18.0,19.0
+11,aftercook-21,2025-12-21T16:24:07.000,200.0,200.0,88.0,16.0,18.0,17.0,19.0
+12,aftercook-21,2025-12-21T16:25:07.000,200.0,200.0,88.0,14.0,16.0,15.0,19.0
+13,aftercook-21,2025-12-21T16:26:07.000,200.0,200.0,88.0,14.0,16.0,15.0,19.0
+14,aftercook-21,2025-12-21T16:27:07.000,200.0,200.0,88.0,13.0,15.0,14.0,19.0
+15,aftercook-21,2025-12-21T16:28:07.000,200.0,200.0,88.0,12.0,14.0,13.0,19.0
+16,aftercook-21,2025-12-21T16:29:07.000,200.0,200.0,88.0,11.0,13.0,12.0,20.0
+17,aftercook-21,2025-12-21T16:30:07.000,200.0,200.0,88.0,11.0,13.0,12.0,20.0
+18,aftercook-21,2025-12-21T16:31:07.000,200.0,200.0,88.0,11.0,12.0,11.0,20.0
+19,aftercook-21,2025-12-21T16:32:07.000,200.0,200.0,88.0,9.0,11.0,10.0,19.0
+20,aftercook-21,2025-12-21T16:33:07.000,200.0,200.0,88.0,9.0,10.0,10.0,19.0

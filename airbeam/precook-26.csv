@@ -1,0 +1,30 @@
+,,,,,Sensor_Package_Name,Sensor_Package_Name,Sensor_Package_Name,Sensor_Package_Name,Sensor_Package_Name
+,,,,,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664,AirBeam3-943cc67b9664
+,,,,,Sensor_Name,Sensor_Name,Sensor_Name,Sensor_Name,Sensor_Name
+,,,,,AirBeam3-F,AirBeam3-PM1,AirBeam3-PM10,AirBeam3-PM2.5,AirBeam3-RH
+,,,,,Measurement_Type,Measurement_Type,Measurement_Type,Measurement_Type,Measurement_Type
+,,,,,Temperature,Particulate Matter,Particulate Matter,Particulate Matter,Humidity
+,,,,,Measurement_Units,Measurement_Units,Measurement_Units,Measurement_Units,Measurement_Units
+,,,,,fahrenheit,microgram per cubic meter,microgram per cubic meter,microgram per cubic meter,percent
+ObjectID,Session_Name,Timestamp,Latitude,Longitude,1:Measurement_Value,2:Measurement_Value,3:Measurement_Value,4:Measurement_Value,5:Measurement_Value
+1,precook-26,2025-12-26T23:30:18.000,200.0,200.0,71.0,0.0,0.0,0.0,30.0
+2,precook-26,2025-12-26T23:31:18.000,200.0,200.0,71.0,0.0,0.0,0.0,28.0
+3,precook-26,2025-12-26T23:32:18.000,200.0,200.0,72.0,0.0,0.0,0.0,27.0
+4,precook-26,2025-12-26T23:33:18.000,200.0,200.0,73.0,0.0,0.0,0.0,26.0
+5,precook-26,2025-12-26T23:34:18.000,200.0,200.0,74.0,0.0,0.0,0.0,26.0
+6,precook-26,2025-12-26T23:35:18.000,200.0,200.0,74.0,0.0,0.0,0.0,25.0
+7,precook-26,2025-12-26T23:36:18.000,200.0,200.0,75.0,0.0,0.0,0.0,25.0
+8,precook-26,2025-12-26T23:37:18.000,200.0,200.0,76.0,0.0,0.0,0.0,25.0
+9,precook-26,2025-12-26T23:38:18.000,200.0,200.0,76.0,0.0,0.0,0.0,24.0
+10,precook-26,2025-12-26T23:39:18.000,200.0,200.0,77.0,0.0,0.0,0.0,24.0
+11,precook-26,2025-12-26T23:40:18.000,200.0,200.0,77.0,0.0,0.0,0.0,24.0
+12,precook-26,2025-12-26T23:41:18.000,200.0,200.0,78.0,0.0,0.0,0.0,24.0
+13,precook-26,2025-12-26T23:42:18.000,200.0,200.0,78.0,0.0,0.0,0.0,23.0
+14,precook-26,2025-12-26T23:43:18.000,200.0,200.0,78.0,0.0,0.0,0.0,23.0
+15,precook-26,2025-12-26T23:44:18.000,200.0,200.0,79.0,0.0,0.0,0.0,23.0
+16,precook-26,2025-12-26T23:45:18.000,200.0,200.0,79.0,0.0,0.0,0.0,23.0
+17,precook-26,2025-12-26T23:46:18.000,200.0,200.0,79.0,0.0,0.0,0.0,23.0
+18,precook-26,2025-12-26T23:47:18.000,200.0,200.0,80.0,0.0,0.0,0.0,22.0
+19,precook-26,2025-12-26T23:48:18.000,200.0,200.0,80.0,0.0,0.0,0.0,22.0
+20,precook-26,2025-12-26T23:49:18.000,200.0,200.0,80.0,0.0,0.0,0.0,22.0
+21,precook-26,2025-12-26T23:50:18.000,200.0,200.0,80.0,0.0,0.0,0.0,22.0
